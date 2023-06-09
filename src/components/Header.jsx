@@ -10,7 +10,7 @@ function Header() {
       bgColor='#FAECED'
       p='20px'
     >
-      <Flex w='85%' justifyContent='space-between' alignItems='center'>
+      <Flex w='80%' justifyContent='space-between' alignItems='center'>
         <Logo />
         <Navigation />
         <Flex flex={1} justifyContent='flex-end'>
