@@ -11,9 +11,7 @@ function App() {
       <Flex flex={2} justifyContent="center" alignItems="center">
         <Heading>Welcome to RecipePad</Heading>
       </Flex>
-      <Flex flex={2} justifyContent="center" alignItems="center">
-        <Recipes />
-      </Flex>
+      <Recipes />
       {/* sample content above */}
       <Footer />
     </Flex>
