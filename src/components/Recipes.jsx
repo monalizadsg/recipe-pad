@@ -1,4 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
+import RecipeCard from "./RecipeCard";
 
 function Recipes() {
   return (
