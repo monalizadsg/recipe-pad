@@ -1,4 +1,4 @@
-import { Flex, Button } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 
 function Recipes() {
   return (
