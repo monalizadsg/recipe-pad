@@ -5,11 +5,15 @@ import "./App.css";
 
 function App() {
   return (
-    <Flex flexDir='column' justifyContent='space-between' h='100vh'>
+    <Flex flexDir="column" justifyContent="space-between" h="100vh">
       <Header />
       {/* sample content Here */}
-      <Flex flex={2} justifyContent='center' alignItems='center'>
+      <Flex flex={2} justifyContent="center" alignItems="center">
         <Heading>Welcome to RecipePad</Heading>
+      </Flex>
+
+      <Flex flex={2} justifyContent="center" alignItems="center">
+        <Heading>Sample content by arvee</Heading>
       </Flex>
       {/* sample content above */}
       <Footer />
