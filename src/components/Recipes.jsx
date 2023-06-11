@@ -11,23 +11,39 @@ function Recipes() {
       bgColor="#FAECED"
       p="20px"
     >
-      <Flex flexDirection="row" alignItems="center">
-        <img src={recipe_bowl} alt="recipe_bowl" />
+      <Flex flexDirection="row" alignItems="center" justifyContent="center">
+        <img
+          src={recipe_bowl}
+          alt="recipe_bowl"
+          style={{ width: "5%", height: "auto" }}
+        />
         <Text fontWeight={600} mb="20px">
           Try Out New Recipes
         </Text>
       </Flex>
       <Flex w="80%" justifyContent="center">
         <Flex flexDirection="column" alignItems="center" mb="20px">
-          <img src={recipe_bowl} alt="recipe_bowl" />
+          <img
+            src={recipe_bowl}
+            alt="recipe_bowl"
+            style={{ width: "30%", height: "auto" }}
+          />
           <Text fontWeight={600}>Recipe 1</Text>
         </Flex>
         <Flex flexDirection="column" alignItems="center" mb="20px">
-          <img src={recipe_bowl} alt="recipe_bowl" />
+          <img
+            src={recipe_bowl}
+            alt="recipe_bowl"
+            style={{ width: "30%", height: "auto" }}
+          />
           <Text fontWeight={600}>Recipe 2</Text>
         </Flex>
         <Flex flexDirection="column" alignItems="center" mb="20px">
-          <img src={recipe_bowl} alt="recipe_bowl" />
+          <img
+            src={recipe_bowl}
+            alt="recipe_bowl"
+            style={{ width: "30%", height: "auto" }}
+          />
           <Text fontWeight={600}>Recipe 3</Text>
         </Flex>
       </Flex>
