@@ -1,14 +1,14 @@
 import { Flex, Text } from "@chakra-ui/react";
 
-function RecipeCard() {
+function RecipeCard({ name, imgUrl }) {
   return (
-    <Flex flex="10%" justifyContent="space-evenly">
-      <Text fontSize="md" fontWeight="semibold">
-        Recipe Image
-      </Text>
-      <Text fontSize="md" fontWeight="semibold">
-        Recipe Name
-      </Text>
+    <Flex flexDirection='column' alignItems='center' mb='20px'>
+      <img
+        src={imgUrl}
+        alt='recipe_bowl'
+        style={{ width: "30%", height: "auto" }}
+      />
+      <Text fontWeight={600}>{name}</Text>
     </Flex>
   );
 }
