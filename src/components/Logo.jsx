@@ -1,5 +1,5 @@
 import { Flex, Text, Image } from "@chakra-ui/react";
-import recipeLogo from "../assets/logo.png";
+import recipeLogo from "/assets/logo.png";
 
 function Logo() {
   return (

@@ -1,5 +1,5 @@
 import { Flex, Image, Button, Text } from "@chakra-ui/react";
-import hero from "../assets/hero.png";
+import hero from "/assets/hero.png";
 
 function Hero() {
   return (

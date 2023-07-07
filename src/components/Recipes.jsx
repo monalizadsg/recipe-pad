@@ -1,6 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import RecipeCard from "./RecipeCard";
-import recipe_bowl from "../assets/bowl.png";
+import recipe_bowl from "/assets/bowl.png";
 
 const recipeData = [
   {
