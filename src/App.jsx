@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import RecipeIndex from "./components/RecipeIndex";
 import AboutUs from "./components/AboutUs";
 import "./App.css";
+import SignUp from "./auth/SignUp";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/recipe-index' element={<RecipeIndex />} />
         <Route path='/about-us' element={<AboutUs />} />
+        <Route path='/sign-up' element={<SignUp />} />
       </Routes>
       <Footer />
     </Flex>
