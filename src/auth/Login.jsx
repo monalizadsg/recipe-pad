@@ -5,24 +5,16 @@ import {
   Stack,
   VStack,
   Heading,
-  Text,
   Box,
   Button,
-  HStack,
   Link,
 } from "@chakra-ui/react";
 import loginPortrait from "/assets/login_food_portrait.jpg";
 import PasswordInput from "../components/PasswordInput";
 import TextInput from "../components/TextInput";
 
-function SignUp() {
-  const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
-
+function Login() {
+  const [user, setUser] = useState({ email: "", password: "" });
   const handleInputChange = (event) => {
     console.log(event.target.value);
     const { name, value } = event.target;
@@ -31,7 +23,7 @@ function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(user.firstName + user.lastName + user.email + " " + user.password);
+    alert(user.email + " " + user.password);
   };
 
   return (
@@ -48,7 +40,7 @@ function SignUp() {
         alignItems='center'
         justifyContent='center'
       >
-        <Box borderWidth='1px' p={8} borderRadius={10} boxShadow='xs'>
+        <Box w='60%' borderWidth='1px' p={8} borderRadius={10} boxShadow='xs'>
           <Stack
             flexDir='column'
             mb='2'
@@ -56,29 +48,11 @@ function SignUp() {
             alignItems='center'
           >
             <Heading as='h3' size='lg'>
-              Sign up
+              Sign in
             </Heading>
-            <Text fontSize='lg'>to enjoy all of our cool features</Text>
-            <Box mt={8}>
+            <Box w='100%' mt={8}>
               <form onSubmit={handleSubmit}>
                 <VStack spacing={4}>
-                  <HStack spacing={4}>
-                    <TextInput
-                      label='First Name'
-                      name='firstName'
-                      type='text'
-                      placeholder='John'
-                      onChange={handleInputChange}
-                      isRequired
-                    />
-                    <TextInput
-                      label='Last Name'
-                      name='lastName'
-                      type='text'
-                      placeholder='Smith'
-                      onChange={handleInputChange}
-                    />
-                  </HStack>
                   <TextInput
                     label='Email'
                     name='email'
@@ -98,15 +72,15 @@ function SignUp() {
                   color='#fff'
                   _hover={{ bgColor: "#fe6062" }}
                 >
-                  Sign Up
+                  Login
                 </Button>
               </form>
             </Box>
           </Stack>
           <Box textAlign='center' mt={4} mb={2}>
-            Already a user?{" "}
+            Not a member?{" "}
             <Link as='b' color='#fe6062' href='#'>
-              Login
+              Sign up
             </Link>
           </Box>
         </Box>
@@ -115,4 +89,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Login;
