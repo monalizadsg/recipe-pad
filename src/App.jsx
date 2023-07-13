@@ -1,26 +1,32 @@
 import { Routes, Route } from "react-router-dom";
-import { Flex } from "@chakra-ui/react";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-
 import Home from "./components/Home";
 import RecipeIndex from "./components/RecipeIndex";
 import AboutUs from "./components/AboutUs";
-import "./App.css";
 import SignUp from "./auth/SignUp";
+import Login from "./auth/Login";
+import PublicRoute from "./app/PublicRoute";
+import PrivateRoute from "./app/PrivateRoute";
+import UserRecipes from "./user/UserRecipes";
+import UserFavorites from "./user/UserFavorites";
+import UserMyRecipes from "./user/UserMyRecipes";
+import "./App.css";
 
 function App() {
   return (
-    <Flex flexDir='column' justifyContent='space-between' h='100vh'>
-      <Header />
-      <Routes>
+    <Routes>
+      <Route element={<PublicRoute />}>
         <Route path='/' element={<Home />} />
         <Route path='/recipe-index' element={<RecipeIndex />} />
         <Route path='/about-us' element={<AboutUs />} />
-        <Route path='/sign-up' element={<SignUp />} />
-      </Routes>
-      <Footer />
-    </Flex>
+      </Route>
+      <Route element={<PrivateRoute />}>
+        <Route path='/recipes' element={<UserRecipes />} />
+        <Route path='/favorites' element={<UserFavorites />} />
+        <Route path='/my-recipes' element={<UserMyRecipes />} />
+      </Route>
+      <Route path='/sign-up' element={<SignUp />} />
+      <Route path='/login' element={<Login />} />
+    </Routes>
   );
 }
 
