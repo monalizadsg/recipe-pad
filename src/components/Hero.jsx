@@ -1,13 +1,16 @@
 import { Flex, Image, Button, Text } from "@chakra-ui/react";
 import hero from "/assets/hero.png";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+  const navigate = useNavigate();
   return (
     <Flex
       bgColor='#EAAFB4'
       alignItems='center'
       justifyContent='center'
       p='20px'
+      h='calc(100vh - 80px)'
     >
       <Flex flex={3} justifyContent='center' p='20px'>
         <div>
@@ -28,6 +31,7 @@ function Hero() {
             p='0 20px'
             borderRadius={30}
             _hover={{ opacity: 0.8 }}
+            onClick={() => navigate("/sign-up")}
           >
             GET STARTED
           </Button>
