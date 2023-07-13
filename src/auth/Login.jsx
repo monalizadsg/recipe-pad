@@ -12,6 +12,7 @@ import {
 import loginPortrait from "/assets/login_food_portrait.jpg";
 import PasswordInput from "../components/PasswordInput";
 import TextInput from "../components/TextInput";
+import { userData } from "../data/User";
 
 function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -23,6 +24,8 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    userData.push(user);
+    console.log({ userData });
     alert(user.email + " " + user.password);
   };
 
