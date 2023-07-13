@@ -13,6 +13,7 @@ import loginPortrait from "/assets/login_food_portrait.jpg";
 import PasswordInput from "../components/PasswordInput";
 import TextInput from "../components/TextInput";
 import { userData } from "../data/User";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
@@ -21,6 +22,7 @@ function Login() {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
   };
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,19 +32,9 @@ function Login() {
   };
 
   return (
-    <Flex w='100%'>
-      <Image
-        w='50%'
-        height='calc(100vh - 150px)'
-        objectFit='cover'
-        src={loginPortrait}
-      />
-      <Flex
-        w='50%'
-        // border='1px solid red'
-        alignItems='center'
-        justifyContent='center'
-      >
+    <Flex w='100%' h='100vh'>
+      <Image w='50%' objectFit='cover' src={loginPortrait} />
+      <Flex w='50%' alignItems='center' justifyContent='center'>
         <Box w='60%' borderWidth='1px' p={8} borderRadius={10} boxShadow='xs'>
           <Stack
             flexDir='column'
@@ -82,7 +74,7 @@ function Login() {
           </Stack>
           <Box textAlign='center' mt={4} mb={2}>
             Not a member?{" "}
-            <Link as='b' color='#fe6062' href='#'>
+            <Link as='b' color='#fe6062' onClick={() => navigate("/sign-up")}>
               Sign up
             </Link>
           </Box>

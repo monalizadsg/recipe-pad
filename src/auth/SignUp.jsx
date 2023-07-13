@@ -14,6 +14,7 @@ import {
 import loginPortrait from "/assets/login_food_portrait.jpg";
 import PasswordInput from "../components/PasswordInput";
 import TextInput from "../components/TextInput";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [user, setUser] = useState({
@@ -22,6 +23,7 @@ function SignUp() {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     console.log(event.target.value);
@@ -35,19 +37,9 @@ function SignUp() {
   };
 
   return (
-    <Flex w='100%'>
-      <Image
-        w='50%'
-        height='calc(100vh - 150px)'
-        objectFit='cover'
-        src={loginPortrait}
-      />
-      <Flex
-        w='50%'
-        // border='1px solid red'
-        alignItems='center'
-        justifyContent='center'
-      >
+    <Flex w='100%' h='100vh' border='1px solid red'>
+      <Image w='50%' objectFit='cover' src={loginPortrait} />
+      <Flex w='50%' alignItems='center' justifyContent='center'>
         <Box borderWidth='1px' p={8} borderRadius={10} boxShadow='xs'>
           <Stack
             flexDir='column'
@@ -105,7 +97,7 @@ function SignUp() {
           </Stack>
           <Box textAlign='center' mt={4} mb={2}>
             Already a user?{" "}
-            <Link as='b' color='#fe6062' href='#'>
+            <Link as='b' color='#fe6062' onClick={() => navigate("/login")}>
               Login
             </Link>
           </Box>

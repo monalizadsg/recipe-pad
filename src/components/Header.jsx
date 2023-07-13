@@ -1,8 +1,10 @@
 import { Flex, Button } from "@chakra-ui/react";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <Flex
       justifyContent='center'
@@ -20,6 +22,7 @@ function Header() {
             p='0 30px'
             borderRadius={30}
             _hover={{ opacity: 0.8 }}
+            onClick={() => navigate("/login")}
           >
             Login
           </Button>
