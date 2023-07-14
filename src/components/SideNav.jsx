@@ -24,13 +24,25 @@ const menu = [
 
 function SideNav() {
   return (
-    <Flex flexDir='column'>
-      <Flex>
-        <List>
+    <Flex
+      flexDir='column'
+      // border='1px solid red'
+      w='20%'
+      bg='#FFFCF5'
+      borderRadius={8}
+    >
+      <Flex pt={6}>
+        <List width='100%'>
           {menu.map(({ title, path, icon }) => (
             <NavLink key={title} to={path}>
-              <ListItem>
-                <Flex>
+              <ListItem padding={4}>
+                <Flex
+                  // border='1px solid yellow'
+                  pl={8}
+                  justifyContent='start'
+                  alignItems='center'
+                  gap={2}
+                >
                   <Image src={icon} h='20px' w='20px' />
                   <Text> {title}</Text>
                 </Flex>
