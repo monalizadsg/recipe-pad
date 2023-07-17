@@ -1,5 +1,5 @@
 import { Flex, Image, List, ListItem, Text } from "@chakra-ui/react";
-import recipe from "/assets/recipe_nav_icon.png";
+import recipe from "/assets/recipes_nav_icon.png";
 import favorite from "/assets/favorite_nav_icon.png";
 import myRecipe from "/assets/my_recipe_nav_icon.png";
 import food from "/assets/salad_icon.png";
@@ -39,7 +39,14 @@ function SideNav() {
         <Logo />
         <List width='100%' mt={10} ml={14}>
           {menu.map(({ title, path, icon }) => (
-            <NavLink key={title} to={path}>
+            <NavLink
+              key={title}
+              to={path}
+              style={({ isActive }) => ({
+                color: isActive ? "#FF8F0D" : "unset",
+                fontWeight: isActive ? 700 : "unset",
+              })}
+            >
               <ListItem padding={4}>
                 <Flex pl={8} justifyContent='start' alignItems='center' gap={2}>
                   <Image src={icon} h='20px' w='20px' />
