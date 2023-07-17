@@ -3,16 +3,18 @@ import SearchBar from "./SearchBar";
 import { Grid, VStack } from "@chakra-ui/react";
 import { recipeData } from "../data/RecipeData";
 import { useState } from "react";
+import { useDebounce } from "use-debounce";
 
 function RecipeIndex() {
-  const [searchInput, setSearchInput] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [debouncedValue] = useDebounce(inputValue, 500);
 
   const handleSearch = (input) => {
-    setSearchInput(input);
+    setInputValue(input);
   };
 
   const filteredRecipes = recipeData.filter((item) =>
-    item.name.toLowerCase().includes(searchInput.toLowerCase())
+    item.name.toLowerCase().includes(inputValue.toLowerCase())
   );
 
   return (
@@ -24,7 +26,7 @@ function RecipeIndex() {
             key={data.id}
             name={data.name}
             imgUrl={data.imgUrl}
-            search={searchInput}
+            search={inputValue}
           />
         ))}
       </Grid>
