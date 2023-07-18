@@ -3,6 +3,7 @@ import { Flex } from "@chakra-ui/react";
 function ScrollContainer({ children }) {
   return (
     <Flex
+      flexDir='column'
       className='scroll-container'
       w='100%'
       padding={2}

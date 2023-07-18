@@ -45,3 +45,54 @@ export const recipeData = [
     imgUrl: "https://source.unsplash.com/vIm26fn_QKg",
   },
 ];
+
+export const userRecipeMockData = [
+  {
+    id: 1,
+    name: "Gyoza aa",
+    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
+    description: "This is a description.",
+    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
+    instructions: ["Mixed all ingredients. Wrap. Cook."],
+  },
+  {
+    id: 2,
+    name: "Gyoza aa",
+    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
+    description: "This is a description.",
+    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
+    instructions: ["Mixed all ingredients. Wrap. Cook."],
+  },
+  {
+    id: 3,
+    name: "Gyoza bb",
+    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
+    description: "This is a description.",
+    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
+    instructions: ["Mixed all ingredients. Wrap. Cook."],
+  },
+  {
+    id: 4,
+    name: "Gyoza bb",
+    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
+    description: "This is a description.",
+    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
+    instructions: ["Mixed all ingredients. Wrap. Cook."],
+  },
+  {
+    id: 5,
+    name: "Gyoza cc",
+    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
+    description: "This is a description.",
+    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
+    instructions: ["Mixed all ingredients. Wrap. Cook."],
+  },
+  {
+    id: 6,
+    name: "Gyoza cc",
+    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
+    description: "This is a description.",
+    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
+    instructions: ["Mixed all ingredients. Wrap. Cook."],
+  },
+];
