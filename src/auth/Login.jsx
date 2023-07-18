@@ -18,7 +18,6 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
   const handleInputChange = (event) => {
-    console.log(event.target.value);
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
   };
@@ -26,9 +25,10 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // TODO: update authentication
     userData.push(user);
     console.log({ userData });
-    alert(user.email + " " + user.password);
+    navigate("/recipes");
   };
 
   return (
