@@ -14,6 +14,8 @@ import {
 import loginPortrait from "/assets/login_food_portrait.jpg";
 import PasswordInput from "../components/PasswordInput";
 import TextInput from "../components/TextInput";
+import { userData } from "../data/User";
+
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
@@ -33,7 +35,9 @@ function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(user.firstName + user.lastName + user.email + " " + user.password);
+    // TODO: update authentication
+    userData.push(user);
+    navigate("/recipes");
   };
 
   return (
