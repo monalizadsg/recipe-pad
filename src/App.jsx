@@ -6,7 +6,7 @@ import SignUp from "./auth/SignUp";
 import Login from "./auth/Login";
 import PublicRoute from "./app/PublicRoute";
 import PrivateRoute from "./app/PrivateRoute";
-import UserRecipes from "./user/UserRecipes";
+import UserAllRecipes from "./user/UserAllRecipes";
 import UserFavorites from "./user/UserFavorites";
 import UserMyRecipes from "./user/UserMyRecipes";
 import "./App.css";
@@ -20,7 +20,7 @@ function App() {
         <Route path='/about-us' element={<AboutUs />} />
       </Route>
       <Route element={<PrivateRoute />}>
-        <Route path='/recipes' element={<UserRecipes />} />
+        <Route path='/recipes' element={<UserAllRecipes />} />
         <Route path='/favorites' element={<UserFavorites />} />
         <Route path='/my-recipes' element={<UserMyRecipes />} />
       </Route>

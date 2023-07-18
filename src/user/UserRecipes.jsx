@@ -1,73 +1,43 @@
-import { useState } from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import { Grid, GridItem, Flex } from "@chakra-ui/react";
 import RecipeCard from "../components/RecipeCard";
 // import { useNavigate } from "react-router-dom";
 import ScrollContainer from "../components/ScrollContainer";
+import SearchBar from "../components/SearchBar";
+import { useDebounce } from "use-debounce";
 
-const allRecipesMockupData = [
-  {
-    id: 1,
-    title: "Gyoza",
-    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
-    description: "This is a description.",
-    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
-    instructions: ["Mixed all ingredients. Wrap. Cook."],
-  },
-  {
-    id: 2,
-    title: "Gyoza",
-    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
-    description: "This is a description.",
-    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
-    instructions: ["Mixed all ingredients. Wrap. Cook."],
-  },
-  {
-    id: 3,
-    title: "Gyoza",
-    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
-    description: "This is a description.",
-    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
-    instructions: ["Mixed all ingredients. Wrap. Cook."],
-  },
-  {
-    id: 4,
-    title: "Gyoza",
-    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
-    description: "This is a description.",
-    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
-    instructions: ["Mixed all ingredients. Wrap. Cook."],
-  },
-  {
-    id: 5,
-    title: "Gyoza",
-    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
-    description: "This is a description.",
-    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
-    instructions: ["Mixed all ingredients. Wrap. Cook."],
-  },
-  {
-    id: 6,
-    title: "Gyoza",
-    imgSrc: "https://source.unsplash.com/kcA-c3f_3FE",
-    description: "This is a description.",
-    ingredients: ["cabbage, meat, onion, garlic, salt, pepper"],
-    instructions: ["Mixed all ingredients. Wrap. Cook."],
-  },
-];
-
-function UserRecipes() {
-  const [recipes, setRecipes] = useState(allRecipesMockupData);
+function UserRecipes({ data }) {
+  const [recipes, setRecipes] = useState(data);
+  const [inputValue, setInputValue] = useState("");
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [debouncedValue] = useDebounce(inputValue, 500);
   // const navigate = useNavigate();
 
-  console.log({ setRecipes });
+  useEffect(() => {
+    setRecipes(data);
+  }, [data]);
+
+  useEffect(() => {
+    const filteredRecipes = recipes.filter((item) =>
+      item.name.toLowerCase().includes(debouncedValue.toLowerCase())
+    );
+    setFilteredRecipes(filteredRecipes);
+  }, [debouncedValue, recipes]);
+
+  const handleSearch = (input) => {
+    setInputValue(input);
+  };
 
   return (
     <>
       <ScrollContainer>
-        <Grid templateColumns='repeat(3, 1fr)' gap={10} w='100%'>
-          {recipes.map((item) => (
+        <Flex justifyContent='center' mb={3}>
+          <SearchBar handleSearch={handleSearch} />
+        </Flex>
+        <Grid templateColumns='repeat(4, 1fr)' gap={10} w='100%'>
+          {filteredRecipes.map((item) => (
             <GridItem key={item.id}>
-              <RecipeCard name={item.title} imgUrl={item.imgSrc} />
+              <RecipeCard name={item.name} imgUrl={item.imgSrc} />
             </GridItem>
           ))}
         </Grid>

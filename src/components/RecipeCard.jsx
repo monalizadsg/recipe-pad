@@ -21,11 +21,11 @@ function RecipeCard({ name, imgUrl, isFavorite }) {
           src={imgUrl}
           alt='recipe_bowl'
           style={{
-            width: "300px",
-            height: "300px",
+            width: "250px",
+            height: "280px",
             objectFit: "cover",
             borderRadius: 20,
-            boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+            boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
           }}
         />
       </Flex>
