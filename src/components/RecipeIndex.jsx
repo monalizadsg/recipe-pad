@@ -4,6 +4,7 @@ import { Grid, VStack } from "@chakra-ui/react";
 import { recipeData } from "../data/RecipeData";
 import { useState, useEffect } from "react";
 import { useDebounce } from "use-debounce";
+import RecipeNotFound from "./RecipeNotFound";
 
 function RecipeIndex() {
   const [recipes, setRecipes] = useState([]);
@@ -30,16 +31,20 @@ function RecipeIndex() {
   return (
     <VStack>
       <SearchBar handleSearch={handleSearch} />
-      <Grid templateColumns={"repeat(4, 1fr)"} gap={50} margin={10}>
-        {filteredRecipes.map((data) => (
-          <RecipeCard
-            key={data.id}
-            name={data.name}
-            imgUrl={data.imgUrl}
-            search={inputValue}
-          />
-        ))}
-      </Grid>
+      {filteredRecipes.length > 0 ? (
+        <Grid templateColumns={"repeat(4, 1fr)"} gap={50} margin={10}>
+          {filteredRecipes.map((data) => (
+            <RecipeCard
+              key={data.id}
+              name={data.name}
+              imgUrl={data.imgUrl}
+              search={inputValue}
+            />
+          ))}
+        </Grid>
+      ) : (
+        <RecipeNotFound />
+      )}
     </VStack>
   );
 }
