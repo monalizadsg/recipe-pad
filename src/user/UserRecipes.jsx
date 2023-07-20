@@ -5,8 +5,9 @@ import RecipeCard from "../components/RecipeCard";
 import ScrollContainer from "../components/ScrollContainer";
 import SearchBar from "../components/SearchBar";
 import { useDebounce } from "use-debounce";
+import AddRecipeCard from "./AddRecipeCard";
 
-function UserRecipes({ data }) {
+function UserRecipes({ data, isUserRecipe }) {
   const [recipes, setRecipes] = useState(data);
   const [inputValue, setInputValue] = useState("");
   const [filteredRecipes, setFilteredRecipes] = useState([]);
@@ -35,6 +36,7 @@ function UserRecipes({ data }) {
           <SearchBar handleSearch={handleSearch} />
         </Flex>
         <Grid templateColumns='repeat(4, 1fr)' gap={10} w='100%'>
+          {isUserRecipe && <AddRecipeCard />}
           {filteredRecipes.map((item) => (
             <GridItem key={item.id}>
               <RecipeCard name={item.name} imgUrl={item.imgSrc} />

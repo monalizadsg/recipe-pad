@@ -10,6 +10,7 @@ import UserAllRecipes from "./user/UserAllRecipes";
 import UserFavorites from "./user/UserFavorites";
 import UserMyRecipes from "./user/UserMyRecipes";
 import "./App.css";
+import AddRecipe from "./user/AddRecipe";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/recipes' element={<UserAllRecipes />} />
         <Route path='/favorites' element={<UserFavorites />} />
         <Route path='/my-recipes' element={<UserMyRecipes />} />
+        <Route path='/add-recipe' element={<AddRecipe />} />
       </Route>
       <Route path='/sign-up' element={<SignUp />} />
       <Route path='/login' element={<Login />} />
