@@ -17,7 +17,7 @@ function UserMyRecipes() {
   return (
     <>
       {recipes.length > 0 ? (
-        <UserRecipes data={recipes} />
+        <UserRecipes data={recipes} isUserRecipe />
       ) : (
         <Flex
           // border='1px solid red'
